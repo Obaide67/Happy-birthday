@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      background-color: black;
+      color: green;
+      font-family: monospace;
+      margin: 0;
+      padding: 20px;
+      overflow: hidden;
+    }
+    #container {
+      white-space: pre-wrap;
+      overflow-y: scroll;
+      height: 100vh;
+    }
+    #cake {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <div id="cake">
+  <pre>
+                0   0
+                |   |
+            ____|___|____
+         0  |~ ~ ~ ~ ~ ~|   0
+         |  |           |   |
+      ___|__|___________|___|__
+      |/\/\/\/\/\/\/\/\/\/\/\/|
+  0   |       H a p p y       |   0
+  |   |/\/\/\/\/\/\/\/\/\/\/\/|   |
+ _|___|_______________________|___|__
+|/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/|
+|                                   |
+|         B i r t h d a y! ! !      |
+| ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ |
+|___________________________________|
+  </pre>
+  </div>  <script>
+    const container = document.getElementById("container");
+    const cake = document.getElementById("cake");
+    let count = 0;
+    const total = 130;
+
+    const interval = setInterval(() => {
+      if (count < total) {
+        const line = document.createElement("div");
+        line.textContent = "happy birthday";
+        container.appendChild(line);
+        container.scrollTop = container.scrollHeight;
+        count++;
+      } else {
+        clearInterval(interval);
+        cake.style.display = "block";
+        container.appendChild(cake);
+        container.scrollTop = container.scrollHeight;
+      }
+    }, 50);
+  </script></body>
+</html>
